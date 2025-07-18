@@ -1,0 +1,109 @@
+**Product Requirements Document (PRD)**
+
+**Product Name:** Samantha LeadGen
+
+**Overview:**
+Samantha LeadGen is a full-stack lead management application built using Next.js, Tailwind CSS, Hero UI, TypeScript, and Supabase. The system captures leads through a custom contact form and visualizes their qualification journey through a Kanban-style dashboard. AI-driven voice and email interactions enrich each lead and update their records dynamically.
+
+**Tech Stack:**
+
+* Frontend: Next.js (TypeScript), Tailwind CSS, Hero UI
+* Backend: Supabase (Database and Auth)
+* Authentication: Supabase Auth with support for both login and signup
+
+**Core Data Model:**
+
+* **Leads Table:**
+
+  * id (UUID, Primary Key)
+  * full\_name (text)
+  * email (text)
+  * phone\_number (text)
+  * linkedin (text)
+  * remarks (text)
+  * extracted\_fields (JSONB, stores dynamic answers based on prompt)
+  * status (enum: 'lead', 'qualified', 'disqualified', 'discovery\_call\_scheduled')
+  * created\_at (timestamp)
+
+* **Phone Calls Table:**
+
+  * id (UUID, Primary Key)
+  * lead\_id (foreign key to Leads)
+  * transcript (text)
+  * metadata (JSONB – call time, agent name, duration, etc.)
+  * created\_at (timestamp)
+
+* **Emails Table:**
+
+  * id (UUID, Primary Key)
+  * lead\_id (foreign key to Leads)
+  * content (text)
+  * metadata (JSONB – subject, timestamp, sender, etc.)
+  * created\_at (timestamp)
+
+**Contact Form:**
+Fields:
+
+* Full Name
+* Email
+* Phone Number
+* LinkedIn
+* Remarks
+
+**Workflow (Outside Scope):**
+
+* Upon form submission, an external Voice AI agent is triggered.
+* The agent uses a dynamic prompt (e.g., bootcamp qualification) to ask follow-up questions.
+* Call transcript and extracted answers are saved back to Supabase.
+* Similar enrichment occurs via email, and the results are synchronized.
+
+**Dynamic Field Extraction:**
+
+* Extracted fields are stored in the `extracted_fields` JSONB column.
+* Example fields (based on prompt):
+
+  * has\_10\_hours\_per\_week (boolean)
+  * async\_ok (boolean)
+  * needs\_financial\_support (boolean)
+* Fields and prompts can be modified without changing schema.
+
+**UI Design Requirements:**
+
+* Responsive UI for desktop, tablet, and mobile
+* Dashboard view with Kanban board
+
+  * Columns:
+
+    * Leads
+    * Qualified
+    * Disqualified
+    * Discovery Call Scheduled
+  * Each card represents a lead
+  * Cards are draggable across columns
+
+**Lead Card Detail View:**
+
+* Contact info
+* Extracted fields (editable inline)
+* Call history (transcripts, call time, metadata)
+* Email history (content, metadata)
+* Ability to edit or delete any lead, transcript, or email
+
+**Authentication:**
+
+* Supabase Auth for admin login
+
+**Out of Scope (Excluded from This PRD):**
+
+* AI agent implementation
+* Google Calendar integration
+* Scheduling and time-related features
+* Project timelines and sprints
+
+**Non-Functional Requirements:**
+
+* Clean codebase with separation of concerns
+* Modular file structure
+* Reusable components with well-defined props
+* Minimal and intuitive UI design
+* Data consistency across phone calls, emails, and leads
