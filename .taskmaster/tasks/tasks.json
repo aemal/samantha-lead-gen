@@ -1,0 +1,1063 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup Next.js Project with TypeScript",
+        "description": "Initialize a new Next.js project with TypeScript support, Tailwind CSS, and Hero UI.",
+        "details": "Use create-next-app to set up a new Next.js project with TypeScript. Install and configure Tailwind CSS and Hero UI. Ensure all dependencies are up-to-date. Use Next.js 13 or later for improved performance and features. Configure tsconfig.json for strict type checking.",
+        "testStrategy": "Verify that the project builds without errors. Run a sample page to ensure TypeScript, Tailwind CSS, and Hero UI are working correctly.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Next.js Project with TypeScript",
+            "description": "Create a new Next.js project using the create-next-app CLI with TypeScript support.",
+            "dependencies": [],
+            "details": "Run `npx create-next-app@latest my-project --typescript` to bootstrap a new Next.js project preconfigured for TypeScript. This will generate the necessary file structure and a tsconfig.json file.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Install and Configure Tailwind CSS",
+            "description": "Add Tailwind CSS to the Next.js project and configure it for use.",
+            "dependencies": [
+              1
+            ],
+            "details": "Install Tailwind CSS and its peer dependencies. Initialize Tailwind configuration files and update the global CSS file to include Tailwind's base, components, and utilities.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Integrate Hero UI",
+            "description": "Install and set up Hero UI components for use in the project.",
+            "dependencies": [
+              2
+            ],
+            "details": "Install the Hero UI package (such as @heroicons/react or a similar library) and import components as needed in your Next.js pages or components.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Update Project Dependencies",
+            "description": "Ensure all project dependencies are up to date and compatible.",
+            "dependencies": [
+              3
+            ],
+            "details": "Run `npm update` or `yarn upgrade` to update dependencies. Check for any compatibility issues between Next.js, TypeScript, Tailwind CSS, and Hero UI.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Configure tsconfig.json for Strict Type Checking",
+            "description": "Adjust the tsconfig.json file to enable strict type checking and recommended TypeScript options.",
+            "dependencies": [
+              4
+            ],
+            "details": "Edit tsconfig.json to set `\"strict\": true` and enable other strict options such as `noImplicitAny`, `strictNullChecks`, and `strictFunctionTypes` for improved type safety.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Setup Supabase Project and Database Schema",
+        "description": "Create a new Supabase project and implement the required database schema for leads, phone calls, and emails.",
+        "details": "Create a new Supabase project. Use Supabase CLI (version 1.64.8 or later) to manage database migrations. Implement the schema for Leads, Phone Calls, and Emails tables as specified in the PRD. Use appropriate data types and constraints. Enable Row Level Security (RLS) for all tables.",
+        "testStrategy": "Run database migrations. Verify table structures using Supabase dashboard. Test inserting sample data to ensure constraints are working correctly.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Supabase Project",
+            "description": "Set up a new Supabase project via the Supabase dashboard, providing a project name, password, and region.",
+            "dependencies": [],
+            "details": "Sign in to Supabase, click 'New Project', fill in the required details, and wait for the project to be provisioned. Once ready, access the dashboard to proceed with further setup.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Initialize Supabase CLI",
+            "description": "Install and initialize the Supabase CLI in your local development environment.",
+            "dependencies": [
+              1
+            ],
+            "details": "Install the Supabase CLI using your system's package manager or npm. Navigate to your project directory and run 'supabase init' to generate configuration files. Start Supabase locally with 'supabase start' if developing locally.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Design Leads Table",
+            "description": "Create the 'Leads' table in the Supabase database with appropriate columns and constraints.",
+            "dependencies": [
+              2
+            ],
+            "details": "Use the Table Editor or SQL Editor in the Supabase dashboard to define the Leads table schema, specifying columns such as id, name, contact info, and any necessary constraints.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Design Phone Calls Table",
+            "description": "Create the 'Phone Calls' table in the Supabase database, linking it to the Leads table as needed.",
+            "dependencies": [
+              3
+            ],
+            "details": "Define the schema for the Phone Calls table, including columns like id, lead_id (foreign key), call_time, duration, and notes. Ensure proper relationships and constraints are set.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Design Emails Table",
+            "description": "Create the 'Emails' table in the Supabase database, associating it with the Leads table.",
+            "dependencies": [
+              4
+            ],
+            "details": "Specify columns such as id, lead_id (foreign key), subject, body, sent_at, and status. Set up necessary constraints and relationships.",
+            "status": "pending"
+          },
+          {
+            "id": 6,
+            "title": "Enable Row Level Security (RLS) for All Tables",
+            "description": "Activate and configure Row Level Security policies for the Leads, Phone Calls, and Emails tables.",
+            "dependencies": [
+              5
+            ],
+            "details": "Enable RLS in the Supabase dashboard for each table and define policies to restrict data access based on user roles or ownership.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement Supabase Authentication",
+        "description": "Set up Supabase Authentication for admin login functionality.",
+        "details": "Use Supabase Auth UI (v0.2.2 or later) for quick implementation. Configure auth providers (email/password at minimum). Implement protected routes using Next.js middleware. Use Supabase's setSession method for client-side auth state management.",
+        "testStrategy": "Test user registration, login, and logout flows. Verify that protected routes are inaccessible without authentication.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Supabase Auth UI",
+            "description": "Set up and integrate the Supabase Auth UI component into the Next.js application to provide a user interface for authentication.",
+            "dependencies": [],
+            "details": "Install the @supabase/auth-ui-react package and add the Auth UI component to the relevant page or component in your Next.js app. Ensure the Supabase client is initialized and environment variables are configured.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Configure Email/Password Provider",
+            "description": "Enable and configure the email/password authentication provider in the Supabase project and ensure the frontend supports sign-up and sign-in with email/password.",
+            "dependencies": [
+              1
+            ],
+            "details": "In the Supabase dashboard, enable the email/password provider. Update the Auth UI component or custom forms to handle email/password sign-up and sign-in flows.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Implement Protected Routes with Next.js Middleware",
+            "description": "Set up Next.js middleware to protect specific routes, ensuring only authenticated users can access them.",
+            "dependencies": [
+              2
+            ],
+            "details": "Create middleware in the Next.js app that checks for a valid Supabase session before allowing access to protected routes. Redirect unauthenticated users to the login page.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Manage Client-Side Auth State",
+            "description": "Implement logic to manage and react to authentication state changes on the client side.",
+            "dependencies": [
+              3
+            ],
+            "details": "Use Supabase's client libraries to listen for auth state changes and update the UI accordingly. Ensure user session information is accessible throughout the app.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Test Authentication Flows",
+            "description": "Thoroughly test all authentication flows, including sign-up, sign-in, sign-out, and access to protected routes.",
+            "dependencies": [
+              4
+            ],
+            "details": "Perform manual and/or automated tests to verify that authentication works as expected, protected routes are enforced, and auth state is managed correctly.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Create Responsive Layout Components",
+        "description": "Develop reusable layout components for responsive design across desktop, tablet, and mobile.",
+        "details": "Create a Layout component with Navbar and Footer. Use Tailwind CSS classes for responsiveness. Implement a mobile-first approach. Use Hero UI components where applicable. Consider using Next.js 13 app directory for improved routing and layouts.",
+        "testStrategy": "Test layout components across different screen sizes. Ensure proper rendering and functionality on desktop, tablet, and mobile devices.",
+        "priority": "medium",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create the Layout Component",
+            "description": "Develop a reusable Layout component that serves as the structural wrapper for the application, providing slots for Navbar, Footer, and main content.",
+            "dependencies": [],
+            "details": "Set up a React (or Next.js) Layout component using Tailwind CSS utility classes for basic structure. Ensure it can accept children components and includes placeholders for Navbar and Footer.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement the Navbar",
+            "description": "Build a responsive Navbar component to be included in the Layout, using Tailwind CSS and Hero UI for styling and interactivity.",
+            "dependencies": [
+              1
+            ],
+            "details": "Design the Navbar to adapt to different screen sizes using Tailwind's responsive classes. Integrate Hero UI components if needed for enhanced visuals or interactivity.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Implement the Footer",
+            "description": "Develop a Footer component that complements the Navbar and fits seamlessly within the Layout, styled with Tailwind CSS and optionally Hero UI.",
+            "dependencies": [
+              1
+            ],
+            "details": "Ensure the Footer is visually consistent with the Navbar and overall layout. Use Tailwind utility classes for spacing, typography, and responsiveness.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Ensure Responsive Design with Tailwind CSS and Hero UI",
+            "description": "Test and refine the Layout, Navbar, and Footer to guarantee full responsiveness across devices, leveraging Tailwind CSS breakpoints and Hero UI components.",
+            "dependencies": [
+              2,
+              3
+            ],
+            "details": "Use Tailwind's responsive utility classes to adjust layout, spacing, and typography for mobile, tablet, and desktop. Validate with browser tools and adjust as needed for a seamless experience.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implement Contact Form",
+        "description": "Create a contact form component with fields for Full Name, Email, Phone Number, LinkedIn, and Remarks.",
+        "details": "Use React Hook Form (v7.43.0 or later) for form state management and validation. Implement client-side validation for all fields. Use Hero UI form components for consistent styling. Ensure form is accessible and follows WCAG 2.1 guidelines.",
+        "testStrategy": "Test form submission with valid and invalid data. Verify that all fields are properly validated. Check accessibility using tools like axe-core.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          4
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Build the Form UI",
+            "description": "Design and implement the basic form structure and input fields using React components.",
+            "dependencies": [],
+            "details": "Create the necessary input fields (e.g., text, email, password) and layout the form elements according to the requirements. Ensure the form structure is clear and user-friendly.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Integrate React Hook Form",
+            "description": "Connect the form inputs to React Hook Form for state management and submission handling.",
+            "dependencies": [
+              1
+            ],
+            "details": "Install react-hook-form and use the useForm hook to register input fields, manage form state, and handle form submission events.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Implement Validation Logic",
+            "description": "Add validation rules to form fields using React Hook Form's validation features.",
+            "dependencies": [
+              2
+            ],
+            "details": "Define validation requirements (e.g., required fields, pattern matching) for each input and display error messages when validation fails.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Apply Hero UI Styling",
+            "description": "Style the form and its components using the Hero UI design system.",
+            "dependencies": [
+              3
+            ],
+            "details": "Utilize Hero UI components and classes to ensure the form matches the desired visual style and maintains consistency with the overall application.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Ensure Accessibility Compliance",
+            "description": "Review and enhance the form to meet accessibility standards.",
+            "dependencies": [
+              4
+            ],
+            "details": "Add appropriate ARIA attributes, ensure keyboard navigation, and verify that the form is usable with assistive technologies.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Develop Lead Submission Logic",
+        "description": "Implement the logic to submit lead data to Supabase upon form submission.",
+        "details": "Use Supabase JavaScript client (v2.26.0 or later) to insert new lead data. Implement error handling and success feedback. Use TypeScript to ensure type safety for lead data. Consider using optimistic updates for better UX.",
+        "testStrategy": "Test lead submission with various data sets. Verify that data is correctly inserted into Supabase. Test error scenarios and ensure proper error handling.",
+        "priority": "high",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Supabase Client",
+            "description": "Set up and configure the Supabase client in the project to enable communication with the Supabase backend.",
+            "dependencies": [],
+            "details": "Create utility files (e.g., client.js) to initialize the Supabase client using environment variables for the Supabase URL and anon key. Ensure the client is accessible where needed in the application.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Lead Data Submission",
+            "description": "Develop the functionality to submit lead data from the frontend to the Supabase database.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create a form or interface for users to enter lead data and use the Supabase client to insert this data into the appropriate table in the database.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Add Error Handling and Feedback",
+            "description": "Incorporate robust error handling and user feedback mechanisms for the lead submission process.",
+            "dependencies": [
+              2
+            ],
+            "details": "Detect and handle errors during data submission, displaying clear feedback messages to users for both success and failure scenarios.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Support Optimistic Updates",
+            "description": "Implement optimistic UI updates to immediately reflect lead submissions in the interface before confirmation from the backend.",
+            "dependencies": [
+              3
+            ],
+            "details": "Update the UI state as soon as a lead is submitted, rolling back changes if an error occurs during the actual database operation.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Create Kanban Board Component",
+        "description": "Develop a Kanban board component with columns for Leads, Qualified, Disqualified, and Discovery Call Scheduled.",
+        "details": "Use react-beautiful-dnd (v13.1.1 or later) for drag-and-drop functionality. Implement column components and card components. Use Tailwind CSS for styling. Ensure the board is responsive across all device sizes.",
+        "testStrategy": "Test drag-and-drop functionality across columns. Verify that the board renders correctly on different screen sizes. Test keyboard accessibility for drag-and-drop operations.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          4
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set Up Board Structure",
+            "description": "Establish the foundational layout for the Kanban board, including the main container and overall workflow representation.",
+            "dependencies": [],
+            "details": "Define the board's data structure and visual container. Ensure it can accommodate dynamic columns and cards, and represents the workflow stages clearly.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Columns",
+            "description": "Create and render columns that represent different workflow stages on the board.",
+            "dependencies": [
+              1
+            ],
+            "details": "Develop components or data structures for columns such as 'To Do', 'In Progress', and 'Done'. Allow for customization and dynamic addition/removal of columns.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Create Card Components",
+            "description": "Develop card components that represent individual tasks or work items within each column.",
+            "dependencies": [
+              2
+            ],
+            "details": "Design reusable card components with properties for task details. Ensure cards can be dynamically created, edited, and displayed within columns.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Integrate Drag-and-Drop Functionality",
+            "description": "Enable interactive drag-and-drop for moving cards between columns and reordering within columns.",
+            "dependencies": [
+              3
+            ],
+            "details": "Implement logic and UI for dragging cards, handling drop events, and updating the board state accordingly. Ensure smooth user experience and data consistency.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Ensure Responsiveness",
+            "description": "Adapt the Kanban board layout and components for usability across different screen sizes and devices.",
+            "dependencies": [
+              4
+            ],
+            "details": "Apply responsive design principles and test the board on various devices. Adjust styles and interactions to maintain usability and readability.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement Lead Card Component",
+        "description": "Create a component to display lead information on Kanban board cards.",
+        "details": "Design a compact card layout displaying key lead information. Use Hero UI components for consistent styling. Implement a click handler to open the detailed view. Consider using Next.js Image component for optimized image loading if lead photos are included.",
+        "testStrategy": "Verify that lead cards display correct information. Test card click functionality. Ensure cards are rendered efficiently for large numbers of leads.",
+        "priority": "medium",
+        "dependencies": [
+          7
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Card Layout",
+            "description": "Create a visually consistent and responsive card layout, ensuring proper aspect ratio, spacing, alignment, and visual hierarchy. Incorporate best practices such as clear typography, sufficient white space, and a grid-based structure for adaptability across devices.",
+            "dependencies": [],
+            "details": "Follow guidelines for fixed aspect ratios (e.g., 4:3 or 16:9), maintain even padding, use clear font hierarchy, and ensure cards are visually distinct from the background. Prepare for varying content lengths and responsive breakpoints.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Integrate Hero UI Components",
+            "description": "Incorporate Hero UI library components into the card layout to ensure design consistency and leverage pre-built interactive elements.",
+            "dependencies": [
+              1
+            ],
+            "details": "Select and configure relevant Hero UI components (e.g., Card, Button, Typography) to match the designed layout. Ensure components are styled according to the established visual hierarchy and spacing.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Implement Click Handler for Detail View",
+            "description": "Add interactive behavior to the card, making the entire card clickable and triggering a detail view when selected.",
+            "dependencies": [
+              2
+            ],
+            "details": "Attach a click handler to the card container. Ensure the card provides visual feedback (e.g., hover effect, shadow) to indicate interactivity. On click, navigate to or display the detailed view of the card's content.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Develop Lead Fetching and State Management",
+        "description": "Implement logic to fetch leads from Supabase and manage lead state in the frontend.",
+        "details": "Use SWR (v2.2.0 or later) or React Query (v3.39.3 or later) for data fetching and caching. Implement pagination or infinite scrolling for efficient data loading. Use TypeScript for type-safe state management. Consider using Zustand (v4.3.8 or later) for global state management if needed.",
+        "testStrategy": "Test data fetching with various query parameters. Verify that state updates correctly when leads are modified. Test pagination or infinite scrolling functionality.",
+        "priority": "high",
+        "dependencies": [
+          2,
+          7,
+          8
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Data Fetching Library",
+            "description": "Select and set up a data fetching library (such as SWR or React Query) in the project to enable efficient and type-safe data retrieval.",
+            "dependencies": [],
+            "details": "Install the chosen library, configure it for use with TypeScript, and ensure it is ready for use in components.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Lead Fetching Logic",
+            "description": "Develop the logic to fetch lead data from the backend API using the integrated data fetching library.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create a function or hook that retrieves leads, handles loading and error states, and ensures type safety with TypeScript.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Add Pagination or Infinite Scroll",
+            "description": "Implement pagination or infinite scroll to efficiently handle large datasets and improve user experience.",
+            "dependencies": [
+              2
+            ],
+            "details": "Modify the lead fetching logic to support fetching additional pages or batches of data as the user navigates or scrolls.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Manage State with TypeScript",
+            "description": "Set up state management for leads and related UI states using TypeScript to ensure type safety and maintainability.",
+            "dependencies": [
+              3
+            ],
+            "details": "Define appropriate types and interfaces, and use state management patterns (such as useState, useReducer, or context) as needed.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Handle State Updates",
+            "description": "Implement robust logic to update state in response to data fetching, pagination, and user actions, ensuring consistency and performance.",
+            "dependencies": [
+              4
+            ],
+            "details": "Ensure that state updates are efficient, avoid unnecessary re-renders, and handle edge cases such as errors or empty results.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Implement Lead Card Detail View",
+        "description": "Create a detailed view component for individual leads, including contact info, extracted fields, call history, and email history.",
+        "details": "Design a modal or separate page for detailed lead view. Implement tabs or sections for different types of information. Use Hero UI components for consistent styling. Ensure all fields are properly displayed and formatted.",
+        "testStrategy": "Test rendering of all lead details. Verify that long text content (e.g., call transcripts) is handled appropriately. Test navigation between list view and detail view.",
+        "priority": "medium",
+        "dependencies": [
+          8,
+          9
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Detail View UI",
+            "description": "Create the layout and visual structure for the detail view, ensuring information is organized and visually appealing. Consider using card-based layouts and progressive disclosure to avoid overwhelming users.",
+            "dependencies": [],
+            "details": "Focus on clarity, grouping related content, and maintaining consistency with the overall app design. Use cards or sections to separate different types of information.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Tabs/Sections",
+            "description": "Add tabs or sectioned navigation within the detail view to organize content into manageable parts, allowing users to switch between different information areas easily.",
+            "dependencies": [
+              1
+            ],
+            "details": "Use bottom navigation or swipe gestures for switching between sections, ensuring smooth and intuitive transitions.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Integrate Hero UI Components",
+            "description": "Incorporate Hero UI components to highlight key elements and enhance the visual hierarchy within the detail view.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Utilize visually distinct elements (such as images, icons, or cards) to draw attention to important information, following best practices for highlighting and grouping.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Handle Navigation Between Views",
+            "description": "Implement navigation logic to allow users to move smoothly between the list/grid view and the detail view, as well as between sections within the detail view.",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "Ensure navigation patterns are familiar (e.g., back button, swipe gestures, navigation drawer) and transitions are fluid to maintain a seamless user experience.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Develop Inline Editing for Lead Details",
+        "description": "Implement functionality to edit lead details and extracted fields inline.",
+        "details": "Use React Hook Form for managing edit state. Implement optimistic updates for better UX. Ensure proper validation for all editable fields. Use Supabase real-time subscriptions to keep data in sync across clients.",
+        "testStrategy": "Test editing various lead fields. Verify that changes are immediately reflected in the UI and persisted to the database. Test concurrent edits from multiple clients.",
+        "priority": "medium",
+        "dependencies": [
+          10
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate React Hook Form for Editing",
+            "description": "Set up React Hook Form in the component to manage form state for editing records, including initializing default values and connecting form controls.",
+            "dependencies": [],
+            "details": "Use useForm and Controller from React Hook Form to manage form state and validation for editable fields. Ensure the form is initialized with the current record's data.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Inline Edit UI",
+            "description": "Create an inline editable UI that allows users to edit fields directly within the list or table view.",
+            "dependencies": [
+              1
+            ],
+            "details": "Use a component pattern where fields toggle between display and input modes based on an isEditing state. Integrate form controls from React Hook Form into the inline UI.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Add Field Validation",
+            "description": "Define and enforce validation rules for editable fields using React Hook Form's validation capabilities.",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Specify validation rules (e.g., required, pattern, min/max length) in the Controller or useForm configuration. Display validation errors inline in the UI.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Implement Optimistic Updates",
+            "description": "Update the UI immediately when a user edits a field, before the server confirms the change, to provide a responsive experience.",
+            "dependencies": [
+              2,
+              3
+            ],
+            "details": "On form submission, update the local state optimistically and trigger the API call. Roll back changes if the server update fails.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Sync Data with Supabase Real-Time",
+            "description": "Ensure that edits are synchronized with Supabase in real-time, updating the UI when changes occur from other clients.",
+            "dependencies": [
+              4
+            ],
+            "details": "Integrate Supabase real-time subscriptions to listen for changes and update the local state accordingly. Handle potential conflicts between optimistic updates and incoming real-time data.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Implement Lead Deletion Functionality",
+        "description": "Add the ability to delete leads, including associated call and email records.",
+        "details": "Implement a confirmation dialog before deletion. Use Supabase transactions to ensure all related records are deleted. Update frontend state after successful deletion. Consider soft deletion for data recovery purposes.",
+        "testStrategy": "Test lead deletion, ensuring all associated records are removed. Verify that the UI updates correctly after deletion. Test error scenarios and ensure proper error handling.",
+        "priority": "low",
+        "dependencies": [
+          9,
+          10
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Confirmation Dialog",
+            "description": "Create a user interface dialog that prompts users to confirm before deleting a lead. Ensure the dialog clearly communicates the consequences of deletion and provides options to proceed or cancel.",
+            "dependencies": [],
+            "details": "The confirmation dialog should be triggered when a user initiates a delete action. It must block further actions until the user confirms or cancels.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Delete Lead and Related Records with Supabase Transaction",
+            "description": "Implement backend logic to delete the lead and all related records using a Supabase transaction. Ensure data integrity by handling cascading deletes or using ON DELETE CASCADE constraints as appropriate.",
+            "dependencies": [
+              1
+            ],
+            "details": "Use Supabase's client libraries or SQL commands to perform the deletion. Consider using ON DELETE CASCADE for automatic cleanup of related data, or manage related deletions manually within a transaction for more control.[1]",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Update Frontend State After Deletion",
+            "description": "Ensure the frontend UI reflects the deletion by removing the lead and its related data from the displayed state. Handle loading states and error feedback for a smooth user experience.",
+            "dependencies": [
+              2
+            ],
+            "details": "After successful deletion, update the application's state management (e.g., React state, Redux store) to remove the deleted lead and any related records from the UI.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Support Soft Deletion",
+            "description": "Implement soft deletion by adding a 'deleted_at' timestamp column to the relevant tables and updating it instead of permanently deleting records. Adjust queries and views to exclude soft-deleted records by default.",
+            "dependencies": [
+              2
+            ],
+            "details": "Modify the deletion logic to set the 'deleted_at' column rather than removing records. Create database views or adjust queries to filter out records where 'deleted_at' is not null, ensuring only active records are shown.[2]",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Create Phone Call History Component",
+        "description": "Develop a component to display phone call history for each lead.",
+        "details": "Design a list or table to display call transcripts and metadata. Implement pagination or virtual scrolling for efficient rendering of large call histories. Use Hero UI components for consistent styling.",
+        "testStrategy": "Test rendering of call history with various amounts of data. Verify that all metadata is correctly displayed. Test pagination or virtual scrolling functionality.",
+        "priority": "medium",
+        "dependencies": [
+          10
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Call History UI",
+            "description": "Create the visual layout for the call history screen, including headers, list items, and group headers. Ensure the design is consistent with the application's style guide and supports integration with Hero UI components.",
+            "dependencies": [],
+            "details": "Use React component design patterns to structure the UI. Consider using templates for customizing list items and headers as demonstrated with Syncfusion React ListView. Plan for extensibility and maintainability.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Data Fetching Logic",
+            "description": "Develop the logic to fetch call history data from the backend or API, handling loading and error states appropriately.",
+            "dependencies": [
+              1
+            ],
+            "details": "Utilize React hooks (such as useEffect and useState) or custom hooks for managing asynchronous data fetching. Ensure the data model aligns with the UI requirements and supports pagination or virtual scroll.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Add Pagination or Virtual Scroll",
+            "description": "Integrate efficient list rendering by implementing pagination or virtual scrolling to handle large call history datasets.",
+            "dependencies": [
+              2
+            ],
+            "details": "Choose between pagination and virtual scroll based on expected data volume and user experience goals. Ensure smooth scrolling and minimal performance impact. Update data fetching logic to support incremental data loading.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Integrate Hero UI Components",
+            "description": "Replace or enhance default UI elements with Hero UI components to ensure consistent styling and improved user experience.",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "Identify which parts of the call history UI can leverage Hero UI components (e.g., list items, buttons, headers). Refactor the UI to use these components, ensuring accessibility and responsiveness.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Implement Email History Component",
+        "description": "Create a component to display email history for each lead.",
+        "details": "Design a list or table to display email content and metadata. Implement pagination or virtual scrolling for efficient rendering of large email histories. Use Hero UI components for consistent styling. Consider implementing a simple email viewer for full email content.",
+        "testStrategy": "Test rendering of email history with various amounts of data. Verify that all metadata is correctly displayed. Test pagination or virtual scrolling functionality.",
+        "priority": "medium",
+        "dependencies": [
+          10
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Email History UI",
+            "description": "Create wireframes and mockups for the email history interface, focusing on usability and familiar UI patterns (e.g., list view, search, filters, and clear navigation). Ensure the design accommodates future integration of an email viewer and supports responsive layouts.",
+            "dependencies": [],
+            "details": "Incorporate proven UI/UX patterns such as grid-based or single-column layouts, clear primary actions, and progressive disclosure to minimize cognitive load. Reference best practices from leading email clients for consistency and user familiarity.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Data Fetching Logic",
+            "description": "Develop the backend and frontend logic to fetch email history data from the server or data source, ensuring efficient loading and error handling.",
+            "dependencies": [
+              1
+            ],
+            "details": "Use asynchronous data fetching with loading indicators (e.g., skeleton loaders) to improve perceived performance. Ensure the API supports filtering, sorting, and searching as designed in the UI.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Add Pagination or Virtual Scroll",
+            "description": "Integrate pagination or virtual scrolling to efficiently handle large volumes of email history data in the UI.",
+            "dependencies": [
+              2
+            ],
+            "details": "Choose between traditional pagination or virtual scroll based on expected data size and user experience goals. Implement UI controls for navigation and ensure smooth, performant scrolling or page transitions.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Integrate Email Viewer Component",
+            "description": "Embed a full-featured email viewer within the email history UI, allowing users to read, reply, and interact with individual emails.",
+            "dependencies": [
+              3
+            ],
+            "details": "Ensure the viewer supports rich HTML email rendering, responsive design, and accessibility. Consider progressive disclosure to keep the main history view uncluttered, revealing the viewer only when an email is selected.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Develop Dynamic Field Extraction Display",
+        "description": "Implement the display and editing of dynamically extracted fields from the JSONB column.",
+        "details": "Create a flexible component to render different types of extracted fields (boolean, text, etc.). Implement inline editing for these fields. Use TypeScript to ensure type safety when working with dynamic data. Consider using JSON schema for validation of dynamic fields.",
+        "testStrategy": "Test rendering and editing of various types of extracted fields. Verify that changes to dynamic fields are correctly persisted to the database. Test handling of unexpected field types.",
+        "priority": "high",
+        "dependencies": [
+          10,
+          11
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Render Dynamic Fields from JSONB",
+            "description": "Parse the JSONB data and render form fields dynamically based on the field definitions contained within the JSON structure.",
+            "dependencies": [],
+            "details": "Implement logic to iterate over the JSONB object, identify each field's type and configuration, and render the appropriate UI component for each field using a dynamic rendering approach.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Implement Flexible UI for Various Field Types",
+            "description": "Develop a UI system that supports rendering different field types (e.g., text, select, checkbox) as specified in the JSONB schema.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create reusable UI components for each supported field type and ensure the rendering logic can handle any combination of fields as defined in the JSONB.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Support Inline Editing of Fields",
+            "description": "Enable users to edit field values directly within the rendered form, updating the local state as changes are made.",
+            "dependencies": [
+              2
+            ],
+            "details": "Implement event handlers and state management to allow inline editing of each field, ensuring changes are reflected in the UI and prepared for validation and persistence.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Add Validation with JSON Schema",
+            "description": "Integrate JSON Schema validation to enforce field constraints and provide user feedback on invalid input.",
+            "dependencies": [
+              3
+            ],
+            "details": "Use a JSON Schema validator to check field values against the schema, displaying validation errors inline and preventing invalid submissions.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Persist Changes to Supabase",
+            "description": "Save the updated JSONB data back to Supabase, ensuring all edits and validations are correctly applied.",
+            "dependencies": [
+              4
+            ],
+            "details": "Implement API calls or use Supabase client libraries to update the relevant record with the modified JSONB data after successful validation.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "title": "Implement Drag-and-Drop Functionality",
+        "description": "Add drag-and-drop functionality to move lead cards between Kanban board columns.",
+        "details": "Use react-beautiful-dnd for drag-and-drop implementation. Update lead status in Supabase when a card is moved. Implement optimistic updates for smooth UX. Ensure drag-and-drop works on touch devices.",
+        "testStrategy": "Test dragging cards between all column combinations. Verify that lead status updates correctly in the database. Test drag-and-drop on various devices, including touch screens.",
+        "priority": "high",
+        "dependencies": [
+          7,
+          8,
+          9
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate react-beautiful-dnd into the Project",
+            "description": "Install and configure the react-beautiful-dnd library in the React application. Set up DragDropContext, Droppable, and Draggable components to enable basic drag-and-drop functionality.",
+            "dependencies": [],
+            "details": "Ensure the library is installed via npm or yarn. Wrap the relevant component tree with DragDropContext and implement at least one Droppable area containing Draggable items.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Update Lead Status on Drop",
+            "description": "Implement logic to update the lead status when a drag-and-drop operation completes, using the onDragEnd handler.",
+            "dependencies": [
+              1
+            ],
+            "details": "In the onDragEnd callback, detect the source and destination of the drop and update the lead's status in the application state accordingly.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Implement Optimistic UI Updates",
+            "description": "Ensure that UI updates immediately reflect changes when a lead is moved, before waiting for server confirmation.",
+            "dependencies": [
+              2
+            ],
+            "details": "Update the local state optimistically in the onDragEnd handler and handle potential rollback if the server update fails.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Ensure Touch Device Support",
+            "description": "Test and enhance drag-and-drop interactions to work smoothly on touch devices such as tablets and smartphones.",
+            "dependencies": [
+              3
+            ],
+            "details": "Verify that react-beautiful-dnd's touch support is functioning as expected and make any necessary adjustments for mobile usability.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Test All Drag-and-Drop Interactions",
+            "description": "Thoroughly test drag-and-drop functionality across devices and scenarios, including edge cases and error handling.",
+            "dependencies": [
+              4
+            ],
+            "details": "Write and execute manual and automated tests to ensure all interactions work as intended, including optimistic updates and touch support.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "Implement Search and Filtering",
+        "description": "Add search and filtering capabilities for leads across all columns.",
+        "details": "Implement a search input for filtering leads by name, email, or phone number. Use Supabase full-text search capabilities for efficient searching. Implement filtering by lead status and other relevant fields. Consider using debounce for search input to reduce unnecessary API calls.",
+        "testStrategy": "Test search functionality with various query terms. Verify that filtering works correctly for different field combinations. Test search performance with large datasets.",
+        "priority": "low",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Search Input UI",
+            "description": "Design and develop a user interface component that allows users to input search queries. Ensure the UI is intuitive and integrates seamlessly with the existing application layout.",
+            "dependencies": [],
+            "details": "This includes creating a text input field, a search button, and any necessary UI feedback (e.g., loading indicators).",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Integrate Supabase Full-Text Search",
+            "description": "Connect the search input to Supabase's full-text search functionality. Ensure that queries from the UI are sent to Supabase and results are displayed to the user.",
+            "dependencies": [
+              1
+            ],
+            "details": "Use Supabase's textSearch function or relevant API to perform efficient full-text searches on the desired database columns.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Add Filtering by Status/Fields",
+            "description": "Enhance the search functionality by allowing users to filter results based on status or other relevant fields.",
+            "dependencies": [
+              2
+            ],
+            "details": "Implement dropdowns, checkboxes, or other UI elements for filtering. Update the backend query logic to include these filters in the Supabase search requests.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Optimize Search Performance with Debounce",
+            "description": "Improve search performance and user experience by implementing a debounce mechanism, reducing unnecessary backend calls during rapid input.",
+            "dependencies": [
+              3
+            ],
+            "details": "Add debounce logic to the search input so that Supabase queries are only triggered after the user has stopped typing for a short period.",
+            "status": "pending"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Implement Error Handling and Logging",
+        "description": "Develop a comprehensive error handling and logging system.",
+        "details": "Implement a global error boundary using React Error Boundary. Use a logging service like Sentry (version 7.54.0 or later) for error tracking. Create custom error components for different types of errors (network errors, validation errors, etc.). Implement retry mechanisms for transient errors.",
+        "testStrategy": "Simulate various error scenarios and verify proper error handling. Check that errors are correctly logged to the chosen logging service. Test retry mechanisms for effectiveness.",
+        "priority": "medium",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Global Error Boundary",
+            "description": "Set up a global error boundary to catch uncaught errors across the application and render a fallback UI.",
+            "dependencies": [],
+            "details": "Create or configure a global error boundary component (e.g., ErrorBoundary in React or Blazor) and wrap the main application layout or root component to ensure all errors are caught and handled in a centralized manner.",
+            "status": "pending"
+          },
+          {
+            "id": 2,
+            "title": "Integrate Logging Service",
+            "description": "Integrate a logging service to record errors captured by the global error boundary for monitoring and debugging.",
+            "dependencies": [
+              1
+            ],
+            "details": "Connect a logging service (such as ILogger, Sentry, or a custom solution) to the error boundary so that all caught exceptions are logged with relevant context and stack traces.",
+            "status": "pending"
+          },
+          {
+            "id": 3,
+            "title": "Create Custom Error Components",
+            "description": "Design and implement custom error components to display user-friendly error messages and branding.",
+            "dependencies": [
+              1
+            ],
+            "details": "Develop custom error UI components that can be rendered by the error boundary, providing clear feedback to users and aligning with the application's design language.",
+            "status": "pending"
+          },
+          {
+            "id": 4,
+            "title": "Add Retry Mechanisms",
+            "description": "Implement retry mechanisms in error components to allow users to attempt failed actions again.",
+            "dependencies": [
+              3
+            ],
+            "details": "Enhance custom error components with retry logic, such as buttons or automatic retries, to improve user experience and resilience against transient errors.",
+            "status": "pending"
+          },
+          {
+            "id": 5,
+            "title": "Test Error Scenarios",
+            "description": "Test various error scenarios to ensure the error boundary, logging, custom components, and retry mechanisms work as intended.",
+            "dependencies": [
+              2,
+              3,
+              4
+            ],
+            "details": "Simulate different types of errors (e.g., network failures, unhandled exceptions) and verify that errors are caught, logged, displayed with custom components, and that retry mechanisms function correctly.",
+            "status": "pending"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-18T13:16:44.685Z",
+      "updated": "2025-07-18T13:16:44.685Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

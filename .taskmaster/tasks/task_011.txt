@@ -1,0 +1,43 @@
+# Task ID: 11
+# Title: Develop Inline Editing for Lead Details
+# Status: pending
+# Dependencies: 10
+# Priority: medium
+# Description: Implement functionality to edit lead details and extracted fields inline.
+# Details:
+Use React Hook Form for managing edit state. Implement optimistic updates for better UX. Ensure proper validation for all editable fields. Use Supabase real-time subscriptions to keep data in sync across clients.
+
+# Test Strategy:
+Test editing various lead fields. Verify that changes are immediately reflected in the UI and persisted to the database. Test concurrent edits from multiple clients.
+
+# Subtasks:
+## 1. Integrate React Hook Form for Editing [pending]
+### Dependencies: None
+### Description: Set up React Hook Form in the component to manage form state for editing records, including initializing default values and connecting form controls.
+### Details:
+Use useForm and Controller from React Hook Form to manage form state and validation for editable fields. Ensure the form is initialized with the current record's data.
+
+## 2. Implement Inline Edit UI [pending]
+### Dependencies: 11.1
+### Description: Create an inline editable UI that allows users to edit fields directly within the list or table view.
+### Details:
+Use a component pattern where fields toggle between display and input modes based on an isEditing state. Integrate form controls from React Hook Form into the inline UI.
+
+## 3. Add Field Validation [pending]
+### Dependencies: 11.1, 11.2
+### Description: Define and enforce validation rules for editable fields using React Hook Form's validation capabilities.
+### Details:
+Specify validation rules (e.g., required, pattern, min/max length) in the Controller or useForm configuration. Display validation errors inline in the UI.
+
+## 4. Implement Optimistic Updates [pending]
+### Dependencies: 11.2, 11.3
+### Description: Update the UI immediately when a user edits a field, before the server confirms the change, to provide a responsive experience.
+### Details:
+On form submission, update the local state optimistically and trigger the API call. Roll back changes if the server update fails.
+
+## 5. Sync Data with Supabase Real-Time [pending]
+### Dependencies: 11.4
+### Description: Ensure that edits are synchronized with Supabase in real-time, updating the UI when changes occur from other clients.
+### Details:
+Integrate Supabase real-time subscriptions to listen for changes and update the local state accordingly. Handle potential conflicts between optimistic updates and incoming real-time data.
+

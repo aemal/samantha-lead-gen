@@ -1,0 +1,37 @@
+# Task ID: 17
+# Title: Implement Search and Filtering
+# Status: pending
+# Dependencies: 9
+# Priority: low
+# Description: Add search and filtering capabilities for leads across all columns.
+# Details:
+Implement a search input for filtering leads by name, email, or phone number. Use Supabase full-text search capabilities for efficient searching. Implement filtering by lead status and other relevant fields. Consider using debounce for search input to reduce unnecessary API calls.
+
+# Test Strategy:
+Test search functionality with various query terms. Verify that filtering works correctly for different field combinations. Test search performance with large datasets.
+
+# Subtasks:
+## 1. Implement Search Input UI [pending]
+### Dependencies: None
+### Description: Design and develop a user interface component that allows users to input search queries. Ensure the UI is intuitive and integrates seamlessly with the existing application layout.
+### Details:
+This includes creating a text input field, a search button, and any necessary UI feedback (e.g., loading indicators).
+
+## 2. Integrate Supabase Full-Text Search [pending]
+### Dependencies: 17.1
+### Description: Connect the search input to Supabase's full-text search functionality. Ensure that queries from the UI are sent to Supabase and results are displayed to the user.
+### Details:
+Use Supabase's textSearch function or relevant API to perform efficient full-text searches on the desired database columns.
+
+## 3. Add Filtering by Status/Fields [pending]
+### Dependencies: 17.2
+### Description: Enhance the search functionality by allowing users to filter results based on status or other relevant fields.
+### Details:
+Implement dropdowns, checkboxes, or other UI elements for filtering. Update the backend query logic to include these filters in the Supabase search requests.
+
+## 4. Optimize Search Performance with Debounce [pending]
+### Dependencies: 17.3
+### Description: Improve search performance and user experience by implementing a debounce mechanism, reducing unnecessary backend calls during rapid input.
+### Details:
+Add debounce logic to the search input so that Supabase queries are only triggered after the user has stopped typing for a short period.
+

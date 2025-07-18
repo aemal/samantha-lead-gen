@@ -1,0 +1,49 @@
+# Task ID: 2
+# Title: Setup Supabase Project and Database Schema
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Create a new Supabase project and implement the required database schema for leads, phone calls, and emails.
+# Details:
+Create a new Supabase project. Use Supabase CLI (version 1.64.8 or later) to manage database migrations. Implement the schema for Leads, Phone Calls, and Emails tables as specified in the PRD. Use appropriate data types and constraints. Enable Row Level Security (RLS) for all tables.
+
+# Test Strategy:
+Run database migrations. Verify table structures using Supabase dashboard. Test inserting sample data to ensure constraints are working correctly.
+
+# Subtasks:
+## 1. Create Supabase Project [pending]
+### Dependencies: None
+### Description: Set up a new Supabase project via the Supabase dashboard, providing a project name, password, and region.
+### Details:
+Sign in to Supabase, click 'New Project', fill in the required details, and wait for the project to be provisioned. Once ready, access the dashboard to proceed with further setup.
+
+## 2. Initialize Supabase CLI [pending]
+### Dependencies: 2.1
+### Description: Install and initialize the Supabase CLI in your local development environment.
+### Details:
+Install the Supabase CLI using your system's package manager or npm. Navigate to your project directory and run 'supabase init' to generate configuration files. Start Supabase locally with 'supabase start' if developing locally.
+
+## 3. Design Leads Table [pending]
+### Dependencies: 2.2
+### Description: Create the 'Leads' table in the Supabase database with appropriate columns and constraints.
+### Details:
+Use the Table Editor or SQL Editor in the Supabase dashboard to define the Leads table schema, specifying columns such as id, name, contact info, and any necessary constraints.
+
+## 4. Design Phone Calls Table [pending]
+### Dependencies: 2.3
+### Description: Create the 'Phone Calls' table in the Supabase database, linking it to the Leads table as needed.
+### Details:
+Define the schema for the Phone Calls table, including columns like id, lead_id (foreign key), call_time, duration, and notes. Ensure proper relationships and constraints are set.
+
+## 5. Design Emails Table [pending]
+### Dependencies: 2.4
+### Description: Create the 'Emails' table in the Supabase database, associating it with the Leads table.
+### Details:
+Specify columns such as id, lead_id (foreign key), subject, body, sent_at, and status. Set up necessary constraints and relationships.
+
+## 6. Enable Row Level Security (RLS) for All Tables [pending]
+### Dependencies: 2.5
+### Description: Activate and configure Row Level Security policies for the Leads, Phone Calls, and Emails tables.
+### Details:
+Enable RLS in the Supabase dashboard for each table and define policies to restrict data access based on user roles or ownership.
+

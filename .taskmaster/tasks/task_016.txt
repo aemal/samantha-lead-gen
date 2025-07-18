@@ -1,0 +1,43 @@
+# Task ID: 16
+# Title: Implement Drag-and-Drop Functionality
+# Status: pending
+# Dependencies: 7, 8, 9
+# Priority: high
+# Description: Add drag-and-drop functionality to move lead cards between Kanban board columns.
+# Details:
+Use react-beautiful-dnd for drag-and-drop implementation. Update lead status in Supabase when a card is moved. Implement optimistic updates for smooth UX. Ensure drag-and-drop works on touch devices.
+
+# Test Strategy:
+Test dragging cards between all column combinations. Verify that lead status updates correctly in the database. Test drag-and-drop on various devices, including touch screens.
+
+# Subtasks:
+## 1. Integrate react-beautiful-dnd into the Project [pending]
+### Dependencies: None
+### Description: Install and configure the react-beautiful-dnd library in the React application. Set up DragDropContext, Droppable, and Draggable components to enable basic drag-and-drop functionality.
+### Details:
+Ensure the library is installed via npm or yarn. Wrap the relevant component tree with DragDropContext and implement at least one Droppable area containing Draggable items.
+
+## 2. Update Lead Status on Drop [pending]
+### Dependencies: 16.1
+### Description: Implement logic to update the lead status when a drag-and-drop operation completes, using the onDragEnd handler.
+### Details:
+In the onDragEnd callback, detect the source and destination of the drop and update the lead's status in the application state accordingly.
+
+## 3. Implement Optimistic UI Updates [pending]
+### Dependencies: 16.2
+### Description: Ensure that UI updates immediately reflect changes when a lead is moved, before waiting for server confirmation.
+### Details:
+Update the local state optimistically in the onDragEnd handler and handle potential rollback if the server update fails.
+
+## 4. Ensure Touch Device Support [pending]
+### Dependencies: 16.3
+### Description: Test and enhance drag-and-drop interactions to work smoothly on touch devices such as tablets and smartphones.
+### Details:
+Verify that react-beautiful-dnd's touch support is functioning as expected and make any necessary adjustments for mobile usability.
+
+## 5. Test All Drag-and-Drop Interactions [pending]
+### Dependencies: 16.4
+### Description: Thoroughly test drag-and-drop functionality across devices and scenarios, including edge cases and error handling.
+### Details:
+Write and execute manual and automated tests to ensure all interactions work as intended, including optimistic updates and touch support.
+

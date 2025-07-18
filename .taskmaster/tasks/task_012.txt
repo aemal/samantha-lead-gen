@@ -1,0 +1,37 @@
+# Task ID: 12
+# Title: Implement Lead Deletion Functionality
+# Status: pending
+# Dependencies: 9, 10
+# Priority: low
+# Description: Add the ability to delete leads, including associated call and email records.
+# Details:
+Implement a confirmation dialog before deletion. Use Supabase transactions to ensure all related records are deleted. Update frontend state after successful deletion. Consider soft deletion for data recovery purposes.
+
+# Test Strategy:
+Test lead deletion, ensuring all associated records are removed. Verify that the UI updates correctly after deletion. Test error scenarios and ensure proper error handling.
+
+# Subtasks:
+## 1. Implement Confirmation Dialog [pending]
+### Dependencies: None
+### Description: Create a user interface dialog that prompts users to confirm before deleting a lead. Ensure the dialog clearly communicates the consequences of deletion and provides options to proceed or cancel.
+### Details:
+The confirmation dialog should be triggered when a user initiates a delete action. It must block further actions until the user confirms or cancels.
+
+## 2. Delete Lead and Related Records with Supabase Transaction [pending]
+### Dependencies: 12.1
+### Description: Implement backend logic to delete the lead and all related records using a Supabase transaction. Ensure data integrity by handling cascading deletes or using ON DELETE CASCADE constraints as appropriate.
+### Details:
+Use Supabase's client libraries or SQL commands to perform the deletion. Consider using ON DELETE CASCADE for automatic cleanup of related data, or manage related deletions manually within a transaction for more control.[1]
+
+## 3. Update Frontend State After Deletion [pending]
+### Dependencies: 12.2
+### Description: Ensure the frontend UI reflects the deletion by removing the lead and its related data from the displayed state. Handle loading states and error feedback for a smooth user experience.
+### Details:
+After successful deletion, update the application's state management (e.g., React state, Redux store) to remove the deleted lead and any related records from the UI.
+
+## 4. Support Soft Deletion [pending]
+### Dependencies: 12.2
+### Description: Implement soft deletion by adding a 'deleted_at' timestamp column to the relevant tables and updating it instead of permanently deleting records. Adjust queries and views to exclude soft-deleted records by default.
+### Details:
+Modify the deletion logic to set the 'deleted_at' column rather than removing records. Create database views or adjust queries to filter out records where 'deleted_at' is not null, ensuring only active records are shown.[2]
+

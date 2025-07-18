@@ -1,0 +1,43 @@
+# Task ID: 7
+# Title: Create Kanban Board Component
+# Status: pending
+# Dependencies: 1, 4
+# Priority: high
+# Description: Develop a Kanban board component with columns for Leads, Qualified, Disqualified, and Discovery Call Scheduled.
+# Details:
+Use react-beautiful-dnd (v13.1.1 or later) for drag-and-drop functionality. Implement column components and card components. Use Tailwind CSS for styling. Ensure the board is responsive across all device sizes.
+
+# Test Strategy:
+Test drag-and-drop functionality across columns. Verify that the board renders correctly on different screen sizes. Test keyboard accessibility for drag-and-drop operations.
+
+# Subtasks:
+## 1. Set Up Board Structure [pending]
+### Dependencies: None
+### Description: Establish the foundational layout for the Kanban board, including the main container and overall workflow representation.
+### Details:
+Define the board's data structure and visual container. Ensure it can accommodate dynamic columns and cards, and represents the workflow stages clearly.
+
+## 2. Implement Columns [pending]
+### Dependencies: 7.1
+### Description: Create and render columns that represent different workflow stages on the board.
+### Details:
+Develop components or data structures for columns such as 'To Do', 'In Progress', and 'Done'. Allow for customization and dynamic addition/removal of columns.
+
+## 3. Create Card Components [pending]
+### Dependencies: 7.2
+### Description: Develop card components that represent individual tasks or work items within each column.
+### Details:
+Design reusable card components with properties for task details. Ensure cards can be dynamically created, edited, and displayed within columns.
+
+## 4. Integrate Drag-and-Drop Functionality [pending]
+### Dependencies: 7.3
+### Description: Enable interactive drag-and-drop for moving cards between columns and reordering within columns.
+### Details:
+Implement logic and UI for dragging cards, handling drop events, and updating the board state accordingly. Ensure smooth user experience and data consistency.
+
+## 5. Ensure Responsiveness [pending]
+### Dependencies: 7.4
+### Description: Adapt the Kanban board layout and components for usability across different screen sizes and devices.
+### Details:
+Apply responsive design principles and test the board on various devices. Adjust styles and interactions to maintain usability and readability.
+

@@ -1,0 +1,43 @@
+# Task ID: 15
+# Title: Develop Dynamic Field Extraction Display
+# Status: pending
+# Dependencies: 10, 11
+# Priority: high
+# Description: Implement the display and editing of dynamically extracted fields from the JSONB column.
+# Details:
+Create a flexible component to render different types of extracted fields (boolean, text, etc.). Implement inline editing for these fields. Use TypeScript to ensure type safety when working with dynamic data. Consider using JSON schema for validation of dynamic fields.
+
+# Test Strategy:
+Test rendering and editing of various types of extracted fields. Verify that changes to dynamic fields are correctly persisted to the database. Test handling of unexpected field types.
+
+# Subtasks:
+## 1. Render Dynamic Fields from JSONB [pending]
+### Dependencies: None
+### Description: Parse the JSONB data and render form fields dynamically based on the field definitions contained within the JSON structure.
+### Details:
+Implement logic to iterate over the JSONB object, identify each field's type and configuration, and render the appropriate UI component for each field using a dynamic rendering approach.
+
+## 2. Implement Flexible UI for Various Field Types [pending]
+### Dependencies: 15.1
+### Description: Develop a UI system that supports rendering different field types (e.g., text, select, checkbox) as specified in the JSONB schema.
+### Details:
+Create reusable UI components for each supported field type and ensure the rendering logic can handle any combination of fields as defined in the JSONB.
+
+## 3. Support Inline Editing of Fields [pending]
+### Dependencies: 15.2
+### Description: Enable users to edit field values directly within the rendered form, updating the local state as changes are made.
+### Details:
+Implement event handlers and state management to allow inline editing of each field, ensuring changes are reflected in the UI and prepared for validation and persistence.
+
+## 4. Add Validation with JSON Schema [pending]
+### Dependencies: 15.3
+### Description: Integrate JSON Schema validation to enforce field constraints and provide user feedback on invalid input.
+### Details:
+Use a JSON Schema validator to check field values against the schema, displaying validation errors inline and preventing invalid submissions.
+
+## 5. Persist Changes to Supabase [pending]
+### Dependencies: 15.4
+### Description: Save the updated JSONB data back to Supabase, ensuring all edits and validations are correctly applied.
+### Details:
+Implement API calls or use Supabase client libraries to update the relevant record with the modified JSONB data after successful validation.
+

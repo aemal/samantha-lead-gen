@@ -1,0 +1,31 @@
+# Task ID: 8
+# Title: Implement Lead Card Component
+# Status: pending
+# Dependencies: 7
+# Priority: medium
+# Description: Create a component to display lead information on Kanban board cards.
+# Details:
+Design a compact card layout displaying key lead information. Use Hero UI components for consistent styling. Implement a click handler to open the detailed view. Consider using Next.js Image component for optimized image loading if lead photos are included.
+
+# Test Strategy:
+Verify that lead cards display correct information. Test card click functionality. Ensure cards are rendered efficiently for large numbers of leads.
+
+# Subtasks:
+## 1. Design Card Layout [pending]
+### Dependencies: None
+### Description: Create a visually consistent and responsive card layout, ensuring proper aspect ratio, spacing, alignment, and visual hierarchy. Incorporate best practices such as clear typography, sufficient white space, and a grid-based structure for adaptability across devices.
+### Details:
+Follow guidelines for fixed aspect ratios (e.g., 4:3 or 16:9), maintain even padding, use clear font hierarchy, and ensure cards are visually distinct from the background. Prepare for varying content lengths and responsive breakpoints.
+
+## 2. Integrate Hero UI Components [pending]
+### Dependencies: 8.1
+### Description: Incorporate Hero UI library components into the card layout to ensure design consistency and leverage pre-built interactive elements.
+### Details:
+Select and configure relevant Hero UI components (e.g., Card, Button, Typography) to match the designed layout. Ensure components are styled according to the established visual hierarchy and spacing.
+
+## 3. Implement Click Handler for Detail View [pending]
+### Dependencies: 8.2
+### Description: Add interactive behavior to the card, making the entire card clickable and triggering a detail view when selected.
+### Details:
+Attach a click handler to the card container. Ensure the card provides visual feedback (e.g., hover effect, shadow) to indicate interactivity. On click, navigate to or display the detailed view of the card's content.
+

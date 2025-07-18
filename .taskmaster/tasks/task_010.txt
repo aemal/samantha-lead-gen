@@ -1,0 +1,37 @@
+# Task ID: 10
+# Title: Implement Lead Card Detail View
+# Status: pending
+# Dependencies: 8, 9
+# Priority: medium
+# Description: Create a detailed view component for individual leads, including contact info, extracted fields, call history, and email history.
+# Details:
+Design a modal or separate page for detailed lead view. Implement tabs or sections for different types of information. Use Hero UI components for consistent styling. Ensure all fields are properly displayed and formatted.
+
+# Test Strategy:
+Test rendering of all lead details. Verify that long text content (e.g., call transcripts) is handled appropriately. Test navigation between list view and detail view.
+
+# Subtasks:
+## 1. Design Detail View UI [pending]
+### Dependencies: None
+### Description: Create the layout and visual structure for the detail view, ensuring information is organized and visually appealing. Consider using card-based layouts and progressive disclosure to avoid overwhelming users.
+### Details:
+Focus on clarity, grouping related content, and maintaining consistency with the overall app design. Use cards or sections to separate different types of information.
+
+## 2. Implement Tabs/Sections [pending]
+### Dependencies: 10.1
+### Description: Add tabs or sectioned navigation within the detail view to organize content into manageable parts, allowing users to switch between different information areas easily.
+### Details:
+Use bottom navigation or swipe gestures for switching between sections, ensuring smooth and intuitive transitions.
+
+## 3. Integrate Hero UI Components [pending]
+### Dependencies: 10.1, 10.2
+### Description: Incorporate Hero UI components to highlight key elements and enhance the visual hierarchy within the detail view.
+### Details:
+Utilize visually distinct elements (such as images, icons, or cards) to draw attention to important information, following best practices for highlighting and grouping.
+
+## 4. Handle Navigation Between Views [pending]
+### Dependencies: 10.1, 10.2, 10.3
+### Description: Implement navigation logic to allow users to move smoothly between the list/grid view and the detail view, as well as between sections within the detail view.
+### Details:
+Ensure navigation patterns are familiar (e.g., back button, swipe gestures, navigation drawer) and transitions are fluid to maintain a seamless user experience.
+
